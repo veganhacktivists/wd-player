@@ -6,7 +6,7 @@ type Source = {
 type Caption = {
   label: string;
   srclang: string;
-  default: boolean;
+  default?: boolean;
   src: string;
 };
 

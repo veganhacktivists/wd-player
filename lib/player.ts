@@ -48,7 +48,7 @@ export default function wdplayer(selector: string, opts: Options = {}) {
     element.kind = "captions";
     element.label = caption.label;
     element.srclang = caption.srclang;
-    element.default = caption.default;
+    element.default = caption.default || false;
     element.src = caption.src;
 
     video.appendChild(element);
