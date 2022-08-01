@@ -2,38 +2,38 @@ import Plyr from "plyr";
 import "plyr/dist/plyr.css";
 import { movies } from "./movies";
 
-type Options = {
-  color?: string;
+interface Options {
+  color: string;
   poster?: string;
-  movie?: keyof typeof movies;
-};
+  movie: keyof typeof movies;
+}
 
 const defaultOptions: Partial<Options> = {
   color: "#f00",
   movie: "dominion",
 };
 
-export default function wdplayer(selector: string, opts: Options = {}) {
-  const options = { ...defaultOptions, ...opts } as Required<Options>;
+export default function wdplayer(selector: string, opts: Partial<Options>) {
+  const options = { ...defaultOptions, ...opts } as Options;
 
   // Find the element.
-  const video = document.querySelector(selector) as HTMLVideoElement | null;
-  if (!video) {
-    throw Error(`[wd-player] Can't find element "${selector}"`);
+  const video = document.querySelector(selector);
+  if (!(video instanceof HTMLVideoElement)) {
+    throw new Error(`[wd-player] Can't find element "${selector}"`);
   }
 
-  // Find the movie
+  // Find the movie.
   const movie = options.movie && movies[options.movie];
   if (!movie) {
-    throw Error(`[wd-player] Can't find movie "${options.movie}"`);
+    throw new Error(`[wd-player] Can't find movie "${options.movie}"`);
   }
 
-  // Set necessary properties
+  // Set necessary properties.
   video.playsInline = true;
   video.controls = true;
-  video.dataset.poster = movie.poster;
+  video.dataset.poster = options.poster || movie.poster;
 
-  // Create sources
+  // Create sources.
   for (const source of movie.sources) {
     const element = document.createElement("source");
     element.type = source.type;
@@ -42,7 +42,7 @@ export default function wdplayer(selector: string, opts: Options = {}) {
     video.appendChild(element);
   }
 
-  // Create captions
+  // Create captions.
   for (const caption of movie.captions) {
     const element = document.createElement("track");
     element.kind = "captions";
@@ -54,10 +54,10 @@ export default function wdplayer(selector: string, opts: Options = {}) {
     video.appendChild(element);
   }
 
-  // Set theme
+  // Set theme.
   video.style.setProperty("--plyr-color-main", options.color);
 
-  // Initialize Plyr
+  // Initialize Plyr.
   new Plyr(video);
 }
 

@@ -1,20 +1,20 @@
-type Source = {
+interface Source {
   type: string;
   src: string;
-};
+}
 
-type Caption = {
+interface Caption {
   label: string;
   srclang: string;
   default?: boolean;
   src: string;
-};
+}
 
-type Movie = {
+interface Movie {
   poster: string;
   sources: Source[];
   captions: Caption[];
-};
+}
 
 export const movies: Record<string, Movie> = {
   dominion: {
