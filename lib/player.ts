@@ -1,19 +1,37 @@
 import Plyr from "plyr";
 import "plyr/dist/plyr.css";
-import { movies } from "./movies";
 
+// Types -----------------------------------------------------------------------
 interface Options {
   color: string;
   poster?: string;
-  movie: keyof typeof movies;
+  movie: string;
+  host: string;
 }
 
+interface Movie {
+  poster: string;
+  sources: Source[];
+  captions: Record<string, string>;
+}
+
+interface Source {
+  type: string;
+  src: string;
+}
+
+// Options ---------------------------------------------------------------------
 const defaultOptions: Partial<Options> = {
   color: "#f00",
   movie: "dominion",
+  host: "https://embed.watchdominion.org",
 };
 
-export default function wdplayer(selector: string, opts: Partial<Options>) {
+// Main ------------------------------------------------------------------------
+export default async function wdplayer(
+  selector: string,
+  opts: Partial<Options>
+) {
   const options = { ...defaultOptions, ...opts } as Options;
 
   // Find the element.
@@ -22,9 +40,12 @@ export default function wdplayer(selector: string, opts: Partial<Options>) {
     throw new Error(`[wd-player] Can't find element "${selector}"`);
   }
 
-  // Find the movie.
-  const movie = options.movie && movies[options.movie];
-  if (!movie) {
+  // Find and get movie data.
+  let movie: Movie;
+  try {
+    const res = await fetch(`${options.host}/${options.movie}/movie.json`);
+    movie = await res.json();
+  } catch (err) {
     throw new Error(`[wd-player] Can't find movie "${options.movie}"`);
   }
 
@@ -43,13 +64,12 @@ export default function wdplayer(selector: string, opts: Partial<Options>) {
   }
 
   // Create captions.
-  for (const caption of movie.captions) {
+  for (const [srclang, label] of Object.entries(movie.captions)) {
     const element = document.createElement("track");
     element.kind = "captions";
-    element.label = caption.label;
-    element.srclang = caption.srclang;
-    element.default = caption.default || false;
-    element.src = caption.src;
+    element.label = label;
+    element.srclang = srclang;
+    element.src = `${options.host}/captions/${srclang}.vtt`;
 
     video.appendChild(element);
   }

@@ -1,0 +1,42 @@
+{
+  "sources": [
+    {
+      "type": "video/mp4",
+      "src": "https://player.odycdn.com/content/claims/watchdominion-en/a6cbca51fe6093be29ab09e4273965c4ea9135f6/watchdominion-en"
+    }
+  ],
+  "captions": {
+    "ar-AE": "Arabic",
+    "bg-BG": "Bulgarian",
+    "ca-ES": "Catalan",
+    "cs-CZ": "Czech",
+    "da-DK": "Danish",
+    "de-DE": "German",
+    "el-GR": "Greek",
+    "en-AU": "English",
+    "es-419": "Spanish (Latin)",
+    "es-ES": "Spanish",
+    "fa-IR": "Persian",
+    "fi-FI": "Finnish",
+    "fr-FR": "French",
+    "hr-HR": "Croatian",
+    "hu-HU": "Hungarian",
+    "is-IS": "Icelandic",
+    "ja-JP": "Japanese",
+    "ko-KR": "Korean",
+    "nl-NL": "Dutch",
+    "no-NO": "Norwegian",
+    "pl-PL": "Polish",
+    "pt-PT": "Portugal",
+    "ro-RO": "Romanian",
+    "ru-RU": "Russian",
+    "sk-SK": "Slovak",
+    "sl-SI": "Slovenian",
+    "sr-BA": "Bosnian",
+    "sv-SE": "Swedish",
+    "th-TH": "Thai",
+    "tr-TR": "Turkish",
+    "zh-CN": "Chinese (Simplified)",
+    "zh-TW": "Chinese (Traditional)"
+  }
+}
