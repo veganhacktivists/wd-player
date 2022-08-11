@@ -1,5 +1,6 @@
 import Plyr from "plyr";
 import "plyr/dist/plyr.css";
+import "./menu-height-fix.css";
 
 // Types -----------------------------------------------------------------------
 interface Options {
@@ -75,11 +76,16 @@ export default async function wdplayer(
     video.appendChild(element);
   }
 
-  // Set theme.
-  video.style.setProperty("--plyr-color-main", options.color);
-
   // Initialize Plyr.
-  new Plyr(video);
+  const plyr = new Plyr(video);
+
+  // Configure CSS variables (theme and video height).
+  const { height } = video.getBoundingClientRect();
+  plyr.elements.container?.style.setProperty(
+    "--plyr-color-main",
+    options.color
+  );
+  plyr.elements.container?.style.setProperty("--video-height", `${height}px`);
 }
 
 // Make the player globally available.
