@@ -69,7 +69,7 @@ export default async function wdplayer(
     const element = document.createElement("track");
     element.kind = "captions";
     element.label = label;
-    element.srclang = srclang;
+    element.srclang = srclang.slice(0, 2);
     element.src = `${options.host}/${options.movie}/captions/${srclang}.vtt`;
 
     video.appendChild(element);
