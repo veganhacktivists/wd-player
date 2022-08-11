@@ -69,7 +69,7 @@ export default async function wdplayer(
     element.kind = "captions";
     element.label = label;
     element.srclang = srclang;
-    element.src = `${options.host}/captions/${srclang}.vtt`;
+    element.src = `${options.host}/${options.movie}/captions/${srclang}.vtt`;
 
     video.appendChild(element);
   }
