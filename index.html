@@ -5,21 +5,75 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Watch this movie</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.skypack.dev/-/sakura.css@v1.3.1-VmH2VZPA3IgYndF0s0Cx/dist=es2020,mode=raw/css/sakura.css"
+    />
     <link rel="stylesheet" href="./dist/wd-player.css" />
     <style>
-      .wrapper {
-        max-width: 80ch;
-        margin: 0 auto;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      ::selection {
+        background-color: #000;
+        color: #fff;
+      }
+
+      pre {
+        -webkit-user-select: all;
+        user-select: all;
       }
     </style>
   </head>
   <body>
-    <div class="wrapper">
-      <h1>Watch this movie!</h1>
-      <video id="player" />
-    </div>
+    <main>
+      <h1>Watch Dominion</h1>
+      <p>Embed Dominion on your own site</p>
+      <div class="container">
+        <video id="player" />
+      </div>
+
+      <h2>How to embed</h2>
+      <p>
+        Perform the following steps in order to embed the player on your
+        website:
+      </p>
+      <ol>
+        <li>
+          Import the player's CSS in the <strong>head</strong> of the document:
+          <pre>
+&lt;link rel="stylesheet" href="https://embed.watchdominion.org/dist/wd-player.css" /&gt;</pre
+          >
+        </li>
+        <li>
+          Add a placeholder with an ID in your HTML where you want the video to
+          be placed:
+          <pre>
+&lt;div class="video-container"&gt;
+  &lt;video id="player" /&gt;
+&lt;/div&gt;</pre
+          >
+        </li>
+        <li>
+          Import the player's JavaScript in the <strong>body</strong> of the
+          document and initialize the player:
+          <pre>
+&lt;script src="https://embed.watchdominion.org/dist/wd-player.umd.js"&gt;&lt;/script/&gt;
+&lt;script&gt;
+  wdplayer("#player");
+&lt;/script/&gt;</pre
+          >
+        </li>
+      </ol>
+
+      <h2>Options</h2>
+      <p>The following options can be passed as a second argument:</p>
+      <pre>
+wdplayer("#player", {
+  color: "#f00", // Set the theme color.
+  poster: undefined, // Overwrite the default poster.
+  movie: "dominion", // Select what movie you want to embed (dominion, cube-of-truth, dont-watch).
+  host: "", // Overwrite the host (during development).
+});</pre
+      >
+    </main>
 
     <script src="./dist/wd-player.umd.js"></script>
     <script>

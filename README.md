@@ -15,7 +15,7 @@ is made available on https://embed.watchdominion.org.
 
 ## Updating and adding movies
 
-In the `public` folder you'll find a folder for each movie that's supported. The
+In the root folder you'll find a folder for each movie that's supported. The
 layout of each movie must adhere to the structure as listed below. Captions must
 be in VTT formats and posters in PNG formats.
 
