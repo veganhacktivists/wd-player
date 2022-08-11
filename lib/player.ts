@@ -33,6 +33,7 @@ export default async function wdplayer(
   opts: Partial<Options>
 ) {
   const options = { ...defaultOptions, ...opts } as Options;
+  const poster = `${options.host}/${options.movie}/posters/default.png`;
 
   // Find the element.
   const video = document.querySelector(selector);
@@ -52,7 +53,7 @@ export default async function wdplayer(
   // Set necessary properties.
   video.playsInline = true;
   video.controls = true;
-  video.dataset.poster = options.poster || movie.poster;
+  video.dataset.poster = options.poster || poster;
 
   // Create sources.
   for (const source of movie.sources) {
