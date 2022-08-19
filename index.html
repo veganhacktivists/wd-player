@@ -5,83 +5,120 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Watch this movie</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.skypack.dev/-/sakura.css@v1.3.1-VmH2VZPA3IgYndF0s0Cx/dist=es2020,mode=raw/css/sakura.css"
-    />
-    <link rel="stylesheet" href="./dist/wd-player.css" />
-    <style>
-      ::selection {
-        background-color: #000;
-        color: #fff;
-      }
 
-      pre {
-        -webkit-user-select: all;
-        user-select: all;
-      }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Rock+Salt&family=Rubik:wght@300;400;500;700;900&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Rock+Salt&family=Rubik:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+
+    <link rel="stylesheet" href="./dist/app.css" />
+    <link rel="stylesheet" href="./dist/wd-player.css" />
   </head>
-  <body>
-    <main>
-      <h1>Watch Dominion</h1>
-      <p>
-        Below you'll find instructions on how to embed Dominion on your own
-        site.
-      </p>
-      <div class="container">
-        <video id="player" />
+  <body class="bg-dark text-white">
+    <main class="relative flex flex-col">
+      <div
+        class="mx-auto flex flex-col items-center px-8 py-20 text-center max-w-lg"
+      >
+        <h2
+          class="flex flex-col p-8 text-4xl font-bold uppercase text-white text-center"
+        >
+          <span class="font-rubik">Embed</span
+          ><span class="font-rock text-accent">Dominion</span>
+        </h2>
+        <p class="mt-6 text-xl font-light">
+          Below you'll find instructions on how to embed Dominion on your own
+          site.
+        </p>
       </div>
 
-      <h2>How to embed</h2>
-      <p>
-        Perform the following steps in order to embed the player on your
-        website:
-      </p>
-      <ol>
-        <li>
-          Import the player's CSS in the <strong>head</strong> of the document:
-          <pre>
+      <div class="mx-auto w-full max-w-3xl px-3">
+        <div class="relative aspect-video">
+          <video class="h-full" id="player" />
+        </div>
+      </div>
+
+      <div
+        class="mx-auto w-full max-w-3xl px-3 py-12 prose prose-invert prose-pre:bg-beige prose-pre:text-dark"
+      >
+        <h2>How to embed</h2>
+        <p>
+          Perform the following steps in order to embed the player on your
+          website:
+        </p>
+        <ol>
+          <li>
+            Import the player's CSS in the <strong>head</strong> of the
+            document:
+            <pre tabindex="0">
 &lt;link rel="stylesheet" href="https://embed.watchdominion.org/dist/wd-player.css" /&gt;</pre
-          >
-        </li>
-        <li>
-          Add a placeholder with an ID in your HTML where you want the video to
-          be placed:
-          <pre>
+            >
+          </li>
+          <li>
+            Add a placeholder with an ID in your HTML where you want the video
+            to be placed:
+            <pre tabindex="0">
 &lt;div class="video-container"&gt;
   &lt;video id="player" /&gt;
 &lt;/div&gt;</pre
-          >
-        </li>
-        <li>
-          Import the player's JavaScript in the <strong>body</strong> of the
-          document and initialize the player:
-          <pre>
+            >
+          </li>
+          <li>
+            Import the player's JavaScript in the <strong>body</strong> of the
+            document and initialize the player:
+            <pre tabindex="0">
 &lt;script src="https://embed.watchdominion.org/dist/wd-player.umd.js"&gt;&lt;/script&gt;
 &lt;script&gt;
   wdplayer("#player");
 &lt;/script&gt;</pre
-          >
-        </li>
-      </ol>
+            >
+          </li>
+        </ol>
 
-      <h2>Options</h2>
-      <p>The following options can be passed as a second argument:</p>
-      <pre>
+        <h2>Options</h2>
+        <p>The following options can be passed as a second argument:</p>
+        <pre tabindex="0">
 wdplayer("#player", {
   color: "#f00", // Set the theme color.
   poster: undefined, // Overwrite the default poster.
   movie: "dominion", // Select what movie you want to embed (dominion, cube-of-truth, dont-watch).
   host: "", // Overwrite the host (during development).
 });</pre
-      >
+        >
+      </div>
     </main>
 
     <script src="./dist/wd-player.umd.js"></script>
     <script>
+      // Auto select everything inside pre tags on click.
+      function onClick(event) {
+        if (!window.getSelection) return;
+
+        const selection = window.getSelection();
+        const range = document.createRange();
+        range.selectNodeContents(event.target);
+        selection.removeAllRanges();
+        selection.addRange(range);
+      }
+
+      const pres = document.querySelectorAll("pre");
+      for (const pre of pres) {
+        pre.addEventListener("click", onClick);
+      }
+
+      // Initialize the player
       wdplayer("#player", {
         host: "",
+        color: "#f4c41a",
       });
     </script>
   </body>
