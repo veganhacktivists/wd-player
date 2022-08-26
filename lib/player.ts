@@ -1,6 +1,7 @@
 import Plyr from "plyr";
 import "plyr/dist/plyr.css";
 import "./menu-height-fix.css";
+import { labels } from "./locale";
 
 // Types -----------------------------------------------------------------------
 interface Options {
@@ -27,6 +28,23 @@ const defaultOptions: Partial<Options> = {
   movie: "dominion",
   host: "https://embed.watchdominion.org",
 };
+
+// Helpers ---------------------------------------------------------------------
+function createLocaleMap(locales: Array<keyof typeof labels>) {
+  const map: Record<string, string> = {};
+
+  for (const locale of locales) {
+    map[locale] = labels[locale];
+  }
+
+  return map;
+}
+
+function getSortedLabels(map: Record<keyof typeof labels, string>) {
+  return Object.entries(map).sort(([_0, a], [_1, b]) =>
+    a.localeCompare(b, "en")
+  );
+}
 
 // Main ------------------------------------------------------------------------
 export default async function wdplayer(
@@ -65,8 +83,13 @@ export default async function wdplayer(
     video.appendChild(element);
   }
 
-  // Create captions.
-  for (const [srclang, label] of Object.entries(movie.captions)) {
+  // Create captions that work for both maps and arrays.
+  let localeLabels = movie.captions;
+  if (Array.isArray(movie.captions)) {
+    localeLabels = createLocaleMap(movie.captions);
+  }
+
+  for (const [srclang, label] of getSortedLabels(localeLabels)) {
     const element = document.createElement("track");
     element.kind = "captions";
     element.label = label;
