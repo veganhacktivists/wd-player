@@ -5,7 +5,5 @@
       "src": "https://player.odycdn.com/content/claims/gary-best-speech-you-will-ever-hear/b6b4ee1f0c2aa2a0aaf7e1c1c975066e501aba00/gary-best-speech-you-will-ever-hear"
     }
   ],
-  "captions": {
-    "it-IT": "Italian"
-  }
+  "captions": ["it-IT"]
 }
