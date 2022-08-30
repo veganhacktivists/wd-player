@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dominion iframe embed</title>
+    <link rel="stylesheet" href="/dist/wd-player.css" />
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+      #player {
+        width: 100vw;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <video id="player" />
+    <script src="/dist/wd-player.umd.js"></script>
+    <script>
+      wdplayer("#player", { color: "#f4c41a" });
+    </script>
+  </body>
+</html>
