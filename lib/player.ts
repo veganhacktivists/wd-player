@@ -34,7 +34,7 @@ function createLocaleMap(locales: Array<keyof typeof labels>) {
   const map: Record<string, string> = {};
 
   for (const locale of locales) {
-    map[locale] = labels[locale];
+    map[locale] = labels[locale] ?? locale;
   }
 
   return map;
