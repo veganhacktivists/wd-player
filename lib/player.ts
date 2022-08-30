@@ -84,7 +84,7 @@ export default async function wdplayer(
   }
 
   // Create captions that work for both maps and arrays.
-  let localeLabels = movie.captions;
+  let localeLabels = movie.captions ?? {};
   if (Array.isArray(movie.captions)) {
     localeLabels = createLocaleMap(movie.captions);
   }
