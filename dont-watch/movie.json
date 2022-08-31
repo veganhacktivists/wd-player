@@ -4,5 +4,18 @@
       "type": "video/mp4",
       "src": "https://player.odycdn.com/content/claims/dontwatch/3fd968dbc216169d6e38846ef15aaa81a0471e36/dontwatch"
     }
+  ],
+  "captions": [
+    "bn-IN",
+    "da-DK",
+    "de-DE",
+    "el-GR",
+    "es-ES",
+    "fr-FR",
+    "it-IT",
+    "ja-JP",
+    "pl-PL",
+    "th-TH",
+    "zh-CN"
   ]
 }
