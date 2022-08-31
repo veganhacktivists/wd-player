@@ -1,6 +1,7 @@
 export const labels = {
   "ar-AE": "Arabic",
   "bg-BG": "Bulgarian",
+  "bn-IN": "Bengali",
   "ca-ES": "Catalan",
   "cs-CZ": "Czech",
   "da-DK": "Danish",
@@ -15,6 +16,7 @@ export const labels = {
   "hr-HR": "Croatian",
   "hu-HU": "Hungarian",
   "is-IS": "Icelandic",
+  "it-IT": "Italian",
   "ja-JP": "Japanese",
   "ko-KR": "Korean",
   "lt-LT": "Lithuanian",
