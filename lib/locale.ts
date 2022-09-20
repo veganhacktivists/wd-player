@@ -23,7 +23,7 @@ export const labels = {
   "nl-NL": "Dutch",
   "no-NO": "Norwegian",
   "pl-PL": "Polish",
-  "pt-PT": "Portugal",
+  "pt-PT": "Portuguese",
   "ro-RO": "Romanian",
   "ru-RU": "Russian",
   "sk-SK": "Slovak",
