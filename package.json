@@ -16,8 +16,8 @@
   "scripts": {
     "build": "npm-run-all vite:build tailwindcss:build",
     "dev": "npm-run-all --parallel vite:dev tailwindcss:dev",
-    "vite:build": "tsc && vite build",
-    "vite:dev": "vite",
+    "vite:build": "tsc && node ./script.js build",
+    "vite:dev": "node ./script.js dev",
     "tailwindcss:build": "tailwindcss -i ./app.css -o ./dist/app.css",
     "tailwindcss:dev": "tailwindcss -i ./app.css -o ./dist/app.css --watch",
     "preview": "vite preview"

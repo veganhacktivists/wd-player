@@ -35,3 +35,19 @@ export const labels = {
   "zh-CN": "Chinese (Simplified)",
   "zh-TW": "Chinese (Traditional)",
 };
+
+export function createLocaleMap(locales: Array<keyof typeof labels>) {
+  const map: Record<string, string> = {};
+
+  for (const locale of locales) {
+    map[locale] = labels[locale] ?? locale;
+  }
+
+  return map;
+}
+
+export function getSortedLabels(map: Record<keyof typeof labels, string>) {
+  return Object.entries(map).sort(([_0, a], [_1, b]) =>
+    a.localeCompare(b, "en")
+  );
+}
