@@ -38,7 +38,8 @@ export async function setupVideo(selector: string, options: Options) {
     localeLabels = createLocaleMap(movie.captions);
   }
 
-  for (const [srclang, label] of getSortedLabels(localeLabels)) {
+  // We're reversing the array because of video.js doing something weird.
+  for (const [srclang, label] of getSortedLabels(localeLabels).reverse()) {
     const element = document.createElement("track");
     element.kind = "captions";
     element.label = label;

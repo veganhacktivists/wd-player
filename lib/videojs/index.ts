@@ -17,6 +17,9 @@ export default async function wdplayer(
   // Setup video, and its captions.
   const { video } = await setupVideo(selector, options);
 
+  // Configure CSS variables
+  video.style.setProperty("--vjs-color-main", options.color);
+
   // Initialize Video.js.
   videojs(video);
 }
