@@ -20,6 +20,7 @@ export async function setupVideo(selector: string, options: Options) {
   // Set necessary properties.
   video.playsInline = true;
   video.controls = true;
+  video.poster = options.poster;
   video.dataset.poster = options.poster;
 
   // Create sources.

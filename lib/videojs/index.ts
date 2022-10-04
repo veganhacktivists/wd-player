@@ -1,5 +1,8 @@
 import { defaultOptions, Options } from "../options";
 import { setupVideo } from "../video";
+import "video.js/dist/video-js.min.css";
+import "./theme.css";
+import videojs from "video.js";
 
 export default async function wdplayer(
   selector: string,
@@ -15,7 +18,7 @@ export default async function wdplayer(
   const { video } = await setupVideo(selector, options);
 
   // Initialize Video.js.
-  console.log(video);
+  videojs(video);
 }
 
 // Make the player globally available.

@@ -1,0 +1,12 @@
+/* FIXME Improve theme */
+.vjs-menu li {
+  padding: 0.25em 0.5em;
+  text-align: left;
+  font-size: 14px;
+  color: #fff;
+  text-transform: initial;
+}
+
+.vjs-menu .vjs-icon-placeholder {
+  display: none !important;
+}

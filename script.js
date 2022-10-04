@@ -6,7 +6,7 @@ const config = require("./vite.config");
 // Constants -------------------------------------------------------------------
 const [, , script] = process.argv;
 const players = ["plyr", "videojs"];
-const defaultPlayer = "plyr";
+const defaultPlayer = "videojs";
 
 // Commands --------------------------------------------------------------------
 async function build() {
@@ -17,7 +17,16 @@ async function build() {
 }
 
 async function dev() {
-  const server = await createServer(createPlayerConfig(defaultPlayer));
+  const config = createPlayerConfig(defaultPlayer);
+
+  // Expose dev server on host network.
+  const server = await createServer({
+    ...config,
+    server: {
+      ...config.server,
+      host: true,
+    },
+  });
 
   await server.listen();
 }

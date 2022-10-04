@@ -1,6 +1,6 @@
 export interface Options {
   color: string;
-  poster?: string;
+  poster: string;
   movie: string;
   host: string;
 }
