@@ -1,4 +1,8 @@
 /* FIXME Improve theme */
+.video-js {
+  -webkit-tap-highlight-color: transparent;
+}
+
 .vjs-menu li {
   padding: 0.25em 0.5em;
   text-align: left;
