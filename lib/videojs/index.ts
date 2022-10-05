@@ -1,8 +1,8 @@
+import videojs from "video.js";
+import "video.js/dist/video-js.min.css";
 import { defaultOptions, Options } from "../options";
 import { setupVideo } from "../video";
-import "video.js/dist/video-js.min.css";
 import "./theme.css";
-import videojs from "video.js";
 
 export default async function wdplayer(
   selector: string,
