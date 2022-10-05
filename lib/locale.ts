@@ -47,7 +47,7 @@ export function createLocaleMap(locales: Array<keyof typeof labels>) {
 }
 
 export function getSortedLabels(map: Record<keyof typeof labels, string>) {
-  return Object.entries(map).sort(([_0, a], [_1, b]) =>
-    a.localeCompare(b, "en")
+  return Object.entries(map).sort(([_0, labelNameA], [_1, labelNameB]) =>
+    labelNameA.localeCompare(labelNameB, "en")
   );
 }
