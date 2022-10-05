@@ -65,7 +65,7 @@
 
       <div class="mx-auto w-full max-w-3xl px-3">
         <div class="relative aspect-video">
-          <video class="h-full" id="player" />
+          <video class="w-full h-full video-js" id="player" />
         </div>
       </div>
 
@@ -159,6 +159,7 @@ wdplayer("#player", {
       </div>
     </footer>
 
+    <!-- TODO Load correct player based on default player in script.js -->
     <script src="/dist/wd-player.umd.js"></script>
     <script>
       // Auto select everything inside pre tags on click.
