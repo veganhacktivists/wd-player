@@ -28,7 +28,7 @@ async function dev() {
     },
   });
 
-  await server.listen();
+  await server.listen(3000);
 }
 
 // Helpers ---------------------------------------------------------------------
