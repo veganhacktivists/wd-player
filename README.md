@@ -1,10 +1,10 @@
 # Watch Dominion Player
 
-A javascript video player based on [Plyr] that allows you to embed Dominion or one
-of the other movies, including captions and different audio formats. Movie data
-is made available on https://embed.watchdominion.org.
+A javascript video player based on [Video.js] that allows you to embed Dominion
+or one of the other movies, including captions and different audio formats.
+Movie data is made available on https://embed.watchdominion.org.
 
-[plyr]: https://plyr.io
+[video.js]: https://videojs.com
 
 ## Usage
 
@@ -29,5 +29,6 @@ movie-name/
   posters/
     default.png
     ...
+  embed.html
   movie.json
 ```
