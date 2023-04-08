@@ -26,15 +26,15 @@
     "@tailwindcss/forms": "^0.5.2",
     "@tailwindcss/typography": "^0.5.9",
     "@types/video.js": "^7.3.51",
-    "autoprefixer": "^10.4.13",
+    "autoprefixer": "^10.4.14",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.21",
-    "tailwindcss": "^3.2.4",
-    "typescript": "^4.9.5",
-    "vite": "^4.1.1"
+    "tailwindcss": "^3.3.1",
+    "typescript": "^5.0.4",
+    "vite": "^4.2.1"
   },
   "dependencies": {
-    "plyr": "^3.7.3",
-    "video.js": "^8.0.3"
+    "plyr": "^3.7.8",
+    "video.js": "^8.0.4"
   }
 }
