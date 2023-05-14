@@ -5,29 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dominion iframe embed</title>
+    <link rel="stylesheet" href="/dist/wd-player.css" />
     <style>
-      html,
       body {
         margin: 0;
-        height: 100%;
         font-family: sans-serif;
       }
-
-      iframe {
-        display: block;
+      #player {
+        width: 100vw;
+        height: 100vh;
       }
     </style>
     <script async src="https://vbcc.veganhacktivists.org/analytics.js"></script>
   </head>
   <body>
-    <iframe
-      title="Watch Dominion"
-      frameborder="0"
-      width="100%"
-      height="100%"
-      src="https://odysee.com/$/embed/@VeganHacktivists:8/dominion-1hour-cut:b?r=8FhNxivUFUPptJehKNZYuAUymgq17vvy"
-      allow="autoplay; picture-in-picture"
-      allowfullscreen
-    ></iframe>
+    <video id="player" class="video-js" />
+    <script src="/dist/wd-player.umd.js"></script>
+    <script>
+      wdplayer("#player", { color: "#f4c41a" });
+    </script>
   </body>
 </html>
