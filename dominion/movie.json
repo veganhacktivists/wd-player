@@ -2,7 +2,7 @@
   "sources": [
     {
       "type": "video/mp4",
-      "src": "https://player.odycdn.com/content/claims/watchdominion-en/a6cbca51fe6093be29ab09e4273965c4ea9135f6/watchdominion-en"
+      "src": "https://player.odycdn.com/api/v4/streams/free/watchdominion-en/a6cbca51fe6093be29ab09e4273965c4ea9135f6/27d47b"
     }
   ],
   "captions": [
