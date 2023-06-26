@@ -2,7 +2,7 @@
   "sources": [
     {
       "type": "video/mp4",
-      "src": "https://player.odycdn.com/content/claims/dontwatch/3fd968dbc216169d6e38846ef15aaa81a0471e36/dontwatch"
+      "src": "https://player.odycdn.com/api/v4/streams/free/dontwatch/3fd968dbc216169d6e38846ef15aaa81a0471e36/63cac2"
     }
   ],
   "captions": [
