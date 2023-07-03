@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Watch this movie</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Rock+Salt&family=Rubik:wght@300;400;500;700;900&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Rock+Salt&family=Rubik:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+
+    <link rel="stylesheet" href="/dist/app.css" />
+    <link rel="stylesheet" href="/dist/wd-player.css" />
+  </head>
+  <body class="bg-dark text-white">
+    <main class="relative flex flex-col">
+      <div class="absolute w-full">
+        <div class="p-3 w-full max-w-3xl mx-auto">
+          <a
+            class="text-white opacity-50 hover:opacity-100 inline-flex gap-2 items-center"
+            href="https://watchdominion.org"
+          >
+            <svg
+              width="19"
+              height="18"
+              viewBox="0 0 178 175"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M102.914 12.6836C106.859 16.6289 106.465 22.5469 102.914 26.4922L55.1758 71.4688H168.406C173.93 71.4688 177.875 75.8086 177.875 80.9375V93.5625C177.875 99.0859 173.93 103.031 168.406 103.031H55.1758L102.914 148.402C106.465 152.348 106.465 158.266 102.914 162.211L94.2344 170.891C90.2891 174.441 84.3711 174.441 80.8203 170.891L3.88672 93.957C0.335938 90.4062 0.335938 84.4883 3.88672 80.543L80.8203 4.00391C84.3711 0.453125 90.2891 0.453125 94.2344 4.00391L102.914 12.6836Z"
+                fill="currentColor"
+              />
+            </svg>
+            Back
+          </a>
+        </div>
+      </div>
+      <div
+        class="mx-auto flex flex-col items-center px-8 py-20 text-center max-w-lg"
+      >
+        <h2
+          class="flex flex-col p-8 text-4xl font-bold uppercase text-white text-center"
+        >
+          <span class="font-rubik">Watch</span
+          ><span class="font-rock text-accent">Dominion</span>
+        </h2>
+      </div>
+
+      <div class="mx-auto w-full max-w-3xl px-3">
+        <div class="relative aspect-video">
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://iframe.mediadelivery.net/embed/135301/89232d42-e290-40fc-917d-5669478ee73b?autoplay=true&loop=false&muted=false&preload=false"
+            style="border: none"
+            loading="lazy"
+            allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;"
+            allowfullscreen="true"
+            title="Dominion movie"
+          ></iframe>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
