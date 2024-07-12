@@ -1,0 +1,5 @@
+[phases.build]
+cmds = [
+  "mkdir /app/dist",
+  "..."
+]

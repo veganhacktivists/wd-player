@@ -36,5 +36,6 @@
   "dependencies": {
     "plyr": "^3.7.8",
     "video.js": "^8.3.0"
-  }
+  },
+  "packageManager": "pnpm@9.3.0+sha1.d4f1da7af76dbdb4ab1a08f6b5add602ffad6fd4"
 }
